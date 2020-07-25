@@ -112,5 +112,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: lean-lede
+        name: openwrt_lean
         path: openwrt/bin
