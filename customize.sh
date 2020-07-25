@@ -25,5 +25,9 @@ find package/openwrt-packages/luci-app-passwall/ -name "*.lua"|xargs sed -i 's/\
 find package/openwrt-packages/luci-app-passwall/ -name "*.htm"|xargs sed -i 's/\"vpn\"/\"services\"/g' 
 find package/openwrt-packages/luci-app-passwall/ -name "*.htm"|xargs sed -i 's/admin\/vpn/admin\/services/g'
 find package/openwrt-packages/luci-app-passwall/ -name "*.lua"|xargs sed -i 's/admin\/vpn/admin\/services/g'
+find package/lean/luci-app-cifs-mount -name "*.lua"|xargs sed -i 's/\"nas\"/\"services\"/g' 
+find package/lean/luci-app-cifs-mount -name "*.htm"|xargs sed -i 's/\"nas\"/\"services\"/g' 
+find package/lean/luci-app-cifs-mount -name "*.htm"|xargs sed -i 's/admin\/nas/admin\/services/g'
+find package/lean/luci-app-cifs-mount -name "*.lua"|xargs sed -i 's/admin\/nas/admin\/services/g'
 
 make defconfig
