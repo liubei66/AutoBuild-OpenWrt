@@ -106,7 +106,7 @@ jobs:
       run: |
         tar -zcvpf k2p.tar.gz openwrt/bin
         curl -fsSL git.io/file-transfer | sh
-        ./transfer cow --block 2621440 -s -p 99 -t 3 --hash --no-progress k2p.tar.gz 2>&1 | tee cowtransfer.log
+        ./transfer cow --block 2621440 -s -p 4 -t 3 --hash --no-progress k2p.tar.gz 2>&1 | tee cowtransfer.log
         echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
     - name : Upload artifact
       uses: actions/upload-artifact@master
