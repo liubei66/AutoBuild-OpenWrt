@@ -34,4 +34,19 @@ find package/lean/luci-app-cifs-mount -name "*.htm"|xargs sed -i 's/\"nas\"/\"se
 find package/lean/luci-app-cifs-mount -name "*.htm"|xargs sed -i 's/admin\/nas/admin\/services/g'
 find package/lean/luci-app-cifs-mount -name "*.lua"|xargs sed -i 's/admin\/nas/admin\/services/g'
 
+find package/lean/luci-app-nft-qos/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/lean/luci-app-nft-qos/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/lean/luci-app-nft-qos/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find package/lean/luci-app-nft-qos/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
+
+
+find package/feeds/luci/luci-app-upnp/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/feeds/luci/luci-app-upnp/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/feeds/luci/luci-app-upnp/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find package/feeds/luci/luci-app-upnp/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
+
+find package/feeds/luci/luci-app-wol/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/feeds/luci/luci-app-wol/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/feeds/luci/luci-app-wol/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find package/feeds/luci/luci-app-wol/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
 make defconfig
