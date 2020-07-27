@@ -40,10 +40,10 @@ find package/lean/luci-app-nft-qos/ -name "*.htm"|xargs sed -i 's/admin\/service
 find package/lean/luci-app-nft-qos/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
 
 
-find package/lean/luci-app-sqm/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
-find package/lean/luci-app-sqm/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
-find package/lean/luci-app-sqm/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
-find package/lean/luci-app-sqm/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
+find feeds/luci/applications/luci-app-sqm/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find feeds/luci/applications/luci-app-sqm/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find feeds/luci/applications/luci-app-sqm/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find feeds/luci/applications/luci-app-sqm/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
 
 find package/feeds/luci/luci-app-upnp/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
 find package/feeds/luci/luci-app-upnp/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
