@@ -5,7 +5,7 @@ fi
 cp -f zzz-default-settings package/lean/default-settings/files/zzz-default-settings
 #2.Modify the version number
 if [ -e package/lean/default-settings/files/zzz-default-settings ] ; then
-        sed -i 's/OpenWrt/J.K.Peng build on $(date "+%Y.%m.%d") @OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
+        sed -i "s/OpenWrt/J.K.Peng build on $(date "+%Y.%m.%d") OpenWrt/g" package/lean/default-settings/files/zzz-default-settings
 fi
 #3.Modify default theme
 if [ -e feeds/luci/collections/luci/Makefile ] ; then
@@ -14,7 +14,7 @@ fi
 #4.Modify the shell banner
 if [ -e package/base-files/files/etc/banner ] ; then
         sed -i '7d' package/base-files/files/etc/banner
-        sed -i "7i \ \ \ \ \ \ \ \ \ J.K.Peng build on $(date "+%Y.%m.%d") @OpenWrt" package/base-files/files/etc/banner
+        sed -i "7i \ \ \ \ \ \ \ \ \ J.K.Peng build on $(date "+%Y.%m.%d") OpenWrt" package/base-files/files/etc/banner
 fi
 
 find package/lean/luci-app-softethervpn/ -name "*.lua"|xargs sed -i 's/\"vpn\"/\"services\"/g'
