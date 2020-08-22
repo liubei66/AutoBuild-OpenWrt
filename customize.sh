@@ -72,4 +72,13 @@ find package/lean/luci-app-samba/ -name "*.lua"|xargs sed -i 's/\"services\"/\"n
 find package/lean/luci-app-samba/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
 find package/lean/luci-app-samba/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
 find package/lean/luci-app-samba/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
+
+find feeds/luci/applications/luci-app-hd-idle/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find feeds/luci/applications/luci-app-hd-idle/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find feeds/luci/applications/luci-app-hd-idle/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find feeds/luci/applications/luci-app-hd-idle/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
+find package/lean/luci-app-hd-idle/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/lean/luci-app-hd-idle/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/lean/luci-app-hd-idle/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find package/lean/luci-app-hd-idle/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
 make defconfig
