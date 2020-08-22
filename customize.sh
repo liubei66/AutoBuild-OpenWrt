@@ -54,4 +54,22 @@ find package/feeds/luci/luci-app-wol/ -name "*.lua"|xargs sed -i 's/\"services\"
 find package/feeds/luci/luci-app-wol/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
 find package/feeds/luci/luci-app-wol/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
 find package/feeds/luci/luci-app-wol/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
+
+find feeds/luci/applications/luci-app-vsftpd/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find feeds/luci/applications/luci-app-vsftpd/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find feeds/luci/applications/luci-app-vsftpd/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find feeds/luci/applications/luci-app-vsftpd/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
+find package/lean/luci-app-vsftpd/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/lean/luci-app-vsftpd/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/lean/luci-app-vsftpd/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find package/lean/luci-app-vsftpd/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
+
+find feeds/luci/applications/luci-app-samba/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find feeds/luci/applications/luci-app-samba/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find feeds/luci/applications/luci-app-samba/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find feeds/luci/applications/luci-app-samba/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
+find package/lean/luci-app-samba/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/lean/luci-app-samba/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
+find package/lean/luci-app-samba/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
+find package/lean/luci-app-samba/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
 make defconfig
