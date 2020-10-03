@@ -105,7 +105,7 @@ jobs:
     - name: Upload firmware to cowtransfer
       run: |
         curl -fsSL git.io/file-transfer | sh
-        ./transfer cow -s -t 3 --hash --no-progress ./openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.img.gz 2>&1 | tee cowtransfer.log
+        ./transfer cow -s --hash --no-progress ./openwrt/bin/targets/x86/64/openwrt-x86-64-generic-squashfs-combined-efi.img.gz 2>&1 | tee cowtransfer.log
         echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
     - name : Upload artifact
       uses: actions/upload-artifact@master
