@@ -16,6 +16,8 @@ if [ -e package/base-files/files/etc/banner ] ; then
         sed -i '7d' package/base-files/files/etc/banner
         sed -i "7i \ \ \ \ \ \ \ \ \ J.K.Peng build on $(date "+%Y.%m.%d") OpenWrt" package/base-files/files/etc/banner
 fi
+#5.Modify the host name
+sed -i 's/OpenWrt/J.K.Peng/g' package/base-files/files/bin/config_generate
 
 find package/lean/luci-app-softethervpn/ -name "*.lua"|xargs sed -i 's/\"vpn\"/\"services\"/g'
 find package/lean/luci-app-softethervpn/ -name "*.lua"|xargs sed -i 's/admin\/vpn/admin\/services/g'
