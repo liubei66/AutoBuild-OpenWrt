@@ -4,8 +4,9 @@ if [ -e package/base-files/files/bin/config_generate ] ; then
 fi
 cp -f zzz-default-settings package/lean/default-settings/files/zzz-default-settings
 #2.Modify the version number
+Build_time=`date "+%Y.%m.%d"`
 if [ -e package/lean/default-settings/files/zzz-default-settings ] ; then
-        sed -i "s/OpenWrt/J.K.Peng build on $(date "+%Y.%m.%d") OpenWrt/g" package/lean/default-settings/files/zzz-default-settings
+        sed -i "s/OpenWrt/J.K.Peng build on ${Build_time} OpenWrt/g" package/lean/default-settings/files/zzz-default-settings
 fi
 #3.Modify default theme
 if [ -e feeds/luci/collections/luci/Makefile ] ; then
