@@ -105,6 +105,7 @@ jobs:
       working-directory: ./openwrt
       run: |
         make -j4 V=s
+        
     - name: Organize files
       id: organize
       if: steps.compile.outputs.status == 'success' && !cancelled()
