@@ -108,7 +108,6 @@ jobs:
         
     - name: Organize files
       id: organize
-      if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         echo "${{ env.useVersionInfo }}" > openwrt/bin/${{ env.DATE }}更新说明.md
         tar -zcvf bin.tar.gz openwrt/bin
@@ -120,7 +119,6 @@ jobs:
         echo "::set-output name=status::success"
     - name: Create release
       uses: ncipollo/release-action@v1
-      if: env.UPLOAD_RELEASE == 'true' && steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: ${{ env.DATE }} 🚀 x64稳定版 | 自动编译
         allowUpdates: true
@@ -132,7 +130,6 @@ jobs:
         artifacts: ${{ env.FIRMWARE }}/*
    
     - name: Upload firmware to cowtransfer #奶牛快传
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
       run: |
         curl -fsSL git.io/file-transfer | sh
         ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
