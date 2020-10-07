@@ -81,6 +81,7 @@ jobs:
       run: |
         git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
         git clone https://github.com/kenzok8/small package/small
+        git clone https://github.com/xiaoqingfengATGH/feeds-xiaoqingfeng package/feeds-xiaoqingfeng
         git clone https://github.com/liubei66/luci-app-koolproxyR package/lean/luci-app-koolproxyR
         
     - name: Configuration Customization - Build_x86_64
