@@ -14,8 +14,16 @@ if [ -e feeds/luci/collections/luci/Makefile ] ; then
 fi
 #4.Modify the shell banner
 if [ -e package/base-files/files/etc/banner ] ; then
-        sed -i '7d' package/base-files/files/etc/banner
-        sed -i "7i \ \ \ \ \ \ \ \ \ J.K.Peng build on $(date "+%Y.%m.%d") OpenWrt" package/base-files/files/etc/banner
+echo '      ##     ##    ##     ########  ######## ##    ##  ######   
+      ##     ##   ##      ##     ## ##       ###   ## ##    ##  
+      ##     ##  ##       ##     ## ##       ####  ## ##        
+      ##     #####        ########  ######   ## ## ## ##   #### 
+##    ##     ##  ##       ##        ##       ##  #### ##    ##  
+##    ## ### ##   ##  ### ##        ##       ##   ### ##    ##  
+ ######  ### ##    ## ### ##        ######## ##    ##  ######   
+    -----------------------------------------------------' > package/base-files/files/etc/banner
+echo "           J.K.Peng build on $(date "+%Y.%m.%d") OpenWrt" >> package/base-files/files/etc/banner
+echo '    -----------------------------------------------------' >> package/base-files/files/etc/banner
 fi
 #5.Modify the host name
 sed -i 's/OpenWrt/J.K.Peng/g' package/base-files/files/bin/config_generate
