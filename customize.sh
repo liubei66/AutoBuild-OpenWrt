@@ -1,4 +1,5 @@
 #1.Modify default IP
+
 if [ -e package/base-files/files/bin/config_generate ] ; then
         sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 fi
