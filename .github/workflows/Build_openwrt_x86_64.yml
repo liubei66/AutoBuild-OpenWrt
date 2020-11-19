@@ -112,6 +112,7 @@ jobs:
     - name: Organize files
       id: organize
       run: |
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         echo "${{ env.useVersionInfo }}" > openwrt/bin/${{ env.DATE }}更新说明.md
         tar -zcvf bin.tar.gz openwrt/bin
         cp bin.tar.gz ./openwrt/bin/targets/x86/64/bin.tar.gz
@@ -128,11 +129,13 @@ jobs:
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
    
     - name: Upload firmware to cowtransfer #奶牛快传
       run: |
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         curl -fsSL git.io/file-transfer | sh
         ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
         echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
