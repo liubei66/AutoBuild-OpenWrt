@@ -111,17 +111,19 @@ jobs:
         
     - name: Organize files
       id: organize
-      run: |
+      env: 
         ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      run: |
         echo "${{ env.useVersionInfo }}" > openwrt/bin/${{ env.DATE }}更新说明.md
         tar -zcvf bin.tar.gz openwrt/bin
         cp bin.tar.gz ./openwrt/bin/targets/x86/64/bin.tar.gz
         cd openwrt/bin/targets/*/*
         rm -rf packages
         echo "::set-env name=FIRMWARE::$PWD"
-        echo "::set-output name=status::success"
     - name: Create release
       uses: ncipollo/release-action@v1
+      env: 
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       with:
         name: ${{ env.DATE }} 🚀 x64稳定版 | 自动编译
         allowUpdates: true
@@ -134,13 +136,16 @@ jobs:
         artifacts: ${{ env.FIRMWARE }}/*
    
     - name: Upload firmware to cowtransfer #奶牛快传
-      run: |
+      env: 
         ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      run: |
         curl -fsSL git.io/file-transfer | sh
         ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
         echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
     - name : Upload artifact
       uses: actions/upload-artifact@master
+      env: 
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       with:
         name: openwrt_lean
         path: openwrt/bin
