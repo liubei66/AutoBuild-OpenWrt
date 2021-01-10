@@ -58,6 +58,7 @@ find feeds/luci/applications/luci-app-sqm/ -name "*.htm"|xargs sed -i 's/\"servi
 find feeds/luci/applications/luci-app-sqm/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
 find feeds/luci/applications/luci-app-sqm/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
 
+rm -rf package/feeds-xiaoqingfeng/luci-app-upnp/
 find package/feeds/luci/luci-app-upnp/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
 find package/feeds/luci/luci-app-upnp/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
 find package/feeds/luci/luci-app-upnp/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
