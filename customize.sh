@@ -53,6 +53,7 @@ find package/lean/luci-app-nft-qos/ -name "*.htm"|xargs sed -i 's/\"services\"/\
 find package/lean/luci-app-nft-qos/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
 find package/lean/luci-app-nft-qos/ -name "*.lua"|xargs sed -i 's/admin\/services/admin\/network/g'
 
+rm -rf package/feeds-xiaoqingfeng/luci-app-sqm/
 find feeds/luci/applications/luci-app-sqm/ -name "*.lua"|xargs sed -i 's/\"services\"/\"network\"/g' 
 find feeds/luci/applications/luci-app-sqm/ -name "*.htm"|xargs sed -i 's/\"services\"/\"network\"/g' 
 find feeds/luci/applications/luci-app-sqm/ -name "*.htm"|xargs sed -i 's/admin\/services/admin\/network/g'
