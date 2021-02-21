@@ -37,6 +37,14 @@ find package/lean/luci-app-softethervpn/ -name "*.htm"|xargs sed -i 's/\"vpn\"/\
 find package/lean/luci-app-softethervpn/ -name "*.htm"|xargs sed -i 's/admin\/vpn/admin\/services/g'
 find package/lean/luci-app-softethervpn/ -name "*.lua"|xargs sed -i 's/\"VPN\"\,\ 45/\"Services\"\,\ 45/g'
 find package/lean/luci-app-softethervpn/ -name "*.lua"|xargs sed -i 's/\"services\"\,\ 45/\"Services\"\,\ 45/g'
+
+find package/feeds-xiaoqingfeng/luci-app-softethervpn/ -name "*.lua"|xargs sed -i 's/\"vpn\"/\"services\"/g'
+find package/feeds-xiaoqingfeng/luci-app-softethervpn/ -name "*.lua"|xargs sed -i 's/admin\/vpn/admin\/services/g'
+find package/feeds-xiaoqingfeng/luci-app-softethervpn/ -name "*.htm"|xargs sed -i 's/\"vpn\"/\"services\"/g' 
+find package/feeds-xiaoqingfeng/luci-app-softethervpn/ -name "*.htm"|xargs sed -i 's/admin\/vpn/admin\/services/g'
+find package/feeds-xiaoqingfeng/luci-app-softethervpn/ -name "*.lua"|xargs sed -i 's/\"VPN\"\,\ 45/\"Services\"\,\ 45/g'
+find package/feeds-xiaoqingfeng/luci-app-softethervpn/ -name "*.lua"|xargs sed -i 's/\"services\"\,\ 45/\"Services\"\,\ 45/g'
+
 find package/openwrt-packages/luci-app-passwall/ -name "*.lua"|xargs sed -i 's/\"vpn\"/\"services\"/g'
 find package/openwrt-packages/luci-app-passwall/ -name "*.lua"|xargs sed -i 's/admin\/vpn/admin\/services/g'
 find package/openwrt-packages/luci-app-passwall/ -name "*.htm"|xargs sed -i 's/\"vpn\"/\"services\"/g' 
