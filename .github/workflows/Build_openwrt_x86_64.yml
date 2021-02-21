@@ -86,6 +86,7 @@ jobs:
         rm -rf package/feeds-xiaoqingfeng/luci-app-sqm | true
         rm -rf package/feeds-xiaoqingfeng/luci-app-upnp | true
         rm -rf package/feeds-xiaoqingfeng/luci-app-aliddns | true
+        rm -rf package/feeds-xiaoqingfeng/luci-app-softethervpn | true
         git clone https://github.com/liubei66/luci-app-koolproxyR package/lean/luci-app-koolproxyR
         
     - name: Configuration Customization - Build_x86_64
