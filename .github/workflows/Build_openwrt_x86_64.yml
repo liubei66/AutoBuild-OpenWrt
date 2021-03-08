@@ -61,7 +61,6 @@ jobs:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       run: |
         echo "::set-env name=DATE::$(date "+%Y年%m月%d日%H时%M分")"
-        realease_tag=$(date "+%Y%m%d %H:%M")
         useVersionInfo=$(git show -s --date=short --format="编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/openwrt)更新记录:<br/>更新人: %an<br/>更新时间: %cd<br/>更新内容: %s<br/>哈希值: %H")
         echo "::set-env name=useVersionInfo::$useVersionInfo"
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
@@ -132,7 +131,7 @@ jobs:
       with:
         name: ${{ env.DATE }} 🚀 x64稳定版 | 自动编译
         allowUpdates: true
-        tag: ${realease_tag}
+        tag: ${{ env.DATE }}
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
